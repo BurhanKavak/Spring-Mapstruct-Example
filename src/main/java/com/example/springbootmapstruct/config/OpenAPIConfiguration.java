@@ -17,7 +17,7 @@ public class OpenAPIConfiguration {
 
         return new OpenAPI()
                 .info(new Info()
-                        .title("Open Api projesi")
+                        .title("Mapstruct projesi")
                         .version(version)
                         .description(description)
                         .license(new License().name("Burhan Kavak Open API Licence"))
