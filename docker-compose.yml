@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    container_name: mapstruct-project
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgredb
+    networks:
+      - comment
+
+
+  postgredb:
+    image: postgres
+    restart: always
+    container_name: postgre-mapstruct-project
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: burhan
+      POSTGRES_PASSWORD: burhan123
+      POSTGRES_DB: school
+    networks:
+      - comment
+
+networks:
+  comment:
+    driver: bridge
+
+
